@@ -16,7 +16,6 @@ triggers {
     steps {
 		Shell("npm install")
         }
-    
     publishers {
 	slackNotifier {
             notifyAborted(true)
