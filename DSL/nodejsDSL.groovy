@@ -14,13 +14,7 @@ triggers {
         nodejs('nodejs')
     }
     steps {
-        dockerBuildAndPublish {
-            repositoryName('Alephdjcs/nodejsapp')
-            tag('${GIT_REVISION,length=7}')
-            registryCredentials('Onboarding.2023')
-            forcePull(false)
-            createFingerprints(false)
-            skipDecorate()
+		Shell("npm install")
         }
     }
     publishers {
