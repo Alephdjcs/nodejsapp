@@ -6,18 +6,17 @@ job('Aplicacion Node.js DSL') {
             node / gitConfigEmail('Danilocerdas.13@Gmail.com')
         }
     }
-    }
-triggers {
+    triggers {
         scm('H/7 * * * *')
     }
     wrappers {
         nodejs('nodejs')
     }
     steps {
-		Shell("npm install")
-        }
+        shell("npm install")
+    }
     publishers {
-	slackNotifier {
+        slackNotifier {
             notifyAborted(true)
             notifyEveryFailure(true)
             notifyNotBuilt(false)
